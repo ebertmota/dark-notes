@@ -1,4 +1,4 @@
-import 'package:dark_notes/src/pages/createNote.dart';
+import 'package:dark_notes/src/pages/create_note.dart';
 import 'package:dark_notes/src/pages/home.dart';
 import 'package:flutter/material.dart';
 
