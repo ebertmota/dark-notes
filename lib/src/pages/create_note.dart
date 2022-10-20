@@ -26,10 +26,23 @@ class CreateNote extends StatelessWidget {
         child: SafeArea(
           child: Container(
             padding: const EdgeInsets.symmetric(horizontal: 25),
-            child:  Column(
+            child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: const [
-                Text('Notes', style: TextStyle(fontSize: 24))
+                TextField(
+                  decoration: InputDecoration.collapsed(hintText: "Title", hintStyle: TextStyle(fontSize: 28)),
+                  style: TextStyle(fontSize: 28),
+                ),
+                SizedBox(height: 25),
+                Flexible(
+                  child: TextField(
+                    maxLines: null,
+                    keyboardType: TextInputType.multiline,
+                    decoration: InputDecoration.collapsed(hintText: "Start typing...", hintStyle: TextStyle(fontSize: 24)),
+                    style: TextStyle(fontSize: 24),
+                  )
+                ),
+                SizedBox(height: 25),
               ],
             )
           )
