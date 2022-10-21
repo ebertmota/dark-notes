@@ -1,5 +1,4 @@
-import 'package:dark_notes/src/components/note_list.dart';
-import 'package:dark_notes/src/components/search_input.dart';
+import 'package:dark_notes/src/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 
 class Home extends StatelessWidget {
