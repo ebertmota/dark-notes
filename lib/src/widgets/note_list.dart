@@ -1,4 +1,4 @@
-import 'package:dark_notes/src/components/note_card.dart';
+import 'package:dark_notes/src/widgets/note_card.dart';
 import 'package:flutter/material.dart';
 
 class NoteList extends StatelessWidget {
