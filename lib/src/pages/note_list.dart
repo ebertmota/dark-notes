@@ -1,8 +1,8 @@
 import 'package:dark_notes/src/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 
-class Home extends StatelessWidget {
-  const Home({super.key});
+class NoteList extends StatelessWidget {
+  const NoteList({super.key});
 
   @override 
   Widget build(BuildContext context) {

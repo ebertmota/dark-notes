@@ -24,7 +24,7 @@ class App extends StatelessWidget {
       ),
       initialRoute: '/',
       routes: {
-        '/': (context) => const Home(),
+        '/': (context) => const NoteList(),
         '/createNote': (context) => const CreateNote(),
       }
     );
