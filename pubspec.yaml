@@ -8,9 +8,6 @@ version: 1.0.0+1
 environment:
   sdk: ">=2.17.6 <3.0.0"
 
-assets:
-  - .env
-
 dependencies:
   flutter:
     sdk: flutter
@@ -26,3 +23,5 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+  assets:
+    - .env
