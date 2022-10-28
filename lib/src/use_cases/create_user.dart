@@ -1,7 +1,8 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'package:flutter_dotenv/flutter_dotenv.dart';
-import 'package:dark_notes/src/entities/entities.dart';
+
+import '../entities/entities.dart';
 
 class CreateUserParams {
   final String email;
@@ -21,5 +22,6 @@ Future<User> createUser(CreateUserParams params) async {
     'email': params.email
   });
   
-  return jsonDecode(response.body);
+  final json = jsonDecode(response.body);
+  return User.fromJson(json);
 }
