@@ -1,5 +1,8 @@
+import 'package:dark_notes/src/use_cases/load_user_by_email.dart';
 import 'package:flutter/material.dart';
 import 'package:dark_notes/src/use_cases/use_cases.dart';
+
+import '../errors/errors.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -60,8 +63,15 @@ class _HomeState extends State<Home> {
                   width: double.infinity,
                   height: 40,
                   child: TextButton(
-                    onPressed: () {
-                      createUser(CreateUserParams(email: email));
+                    onPressed: () async {
+                      try {
+                        final user = await loadUserByEmail(email);
+                        print(user.email);
+                      } on UserError catch (error) {
+                        if (error == UserError.notFound) {
+                          await createUser(CreateUserParams(email: email));
+                        }
+                      }
                     },
                     style: TextButton.styleFrom(
                       shape: (
