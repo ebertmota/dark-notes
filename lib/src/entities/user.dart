@@ -3,5 +3,13 @@ class User {
   final String name;
   final String email;
 
-  User(this.id, this.name, this.email);
+  User({required this.id, required this.name, required this.email});
+
+  factory User.fromJson(Map json){
+    return User(
+      id: json['id'],
+      email: json['email'],
+      name: json['name']
+    );
+  }
 }
