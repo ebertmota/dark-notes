@@ -1,8 +1,6 @@
 import 'dart:convert';
-import 'package:http/http.dart' as http;
-import 'package:flutter_dotenv/flutter_dotenv.dart';
-
 import '../entities/entities.dart';
+import 'package:dark_notes/src/helpers/api.dart';
 
 class CreateUserParams {
   final String email;
@@ -15,13 +13,9 @@ class CreateUserParams {
 }
 
 Future<User> createUser(CreateUserParams params) async {
-  var postUrl = Uri.https(dotenv.env['API_BASE_URL'] as String, 'users');
+  var response = await httpClient
+      .post('/users', data: {'name': params.name, 'email': params.email});
 
-  var response = await http.post(postUrl, body: {
-    'name': params.name,
-    'email': params.email
-  });
-  
-  final json = jsonDecode(response.body);
+  final json = jsonDecode(response.data);
   return User.fromJson(json);
 }
